@@ -22,7 +22,7 @@ const Home = () => (
           allowFullscreen
         ></iframe>
 
-        <p className="lh-copy pt4">Today Buddy is 1 day old!</p>
+        <p className="lh-copy pt4">Today Buddy is 2 days old!</p>
         <p className="lh-copy">
           Buddy is here to give us emotional support during today's times.
           <br />
