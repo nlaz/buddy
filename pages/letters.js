@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import csv from "csvtojson";
+import letters from "../data/letters.json";
 
 const LetterItem = ({ letter }) => (
   <div className="mb4 lh-copy">
@@ -39,9 +40,9 @@ const Letters = ({ letters }) => (
 );
 
 Letters.getInitialProps = async function() {
-  const json = await csv().fromFile("./data/letters.csv");
+  // const json = await csv().fromFile("./data/letters.json");
 
-  return { letters: json };
+  return { letters: letters };
 };
 
 export default Letters;
