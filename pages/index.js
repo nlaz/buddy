@@ -1,19 +1,11 @@
 import React, { Component } from "react";
 import Head from "next/head";
-import Emoji from "../components/Emoji";
+import Link from "next/link";
+import timediff from "timediff";
 
-class HelloEmoji extends Component {
-  componentDidMount() {
-    setTimeout(() => this.props.onDestroy(), 1000);
-  }
-  render() {
-    return (
-      <div className="flex items-center justify-center absolute top-0 bottom-0 right-0 left-0">
-        <Emoji className="hello-emoji" value="👋" size="200" />
-      </div>
-    );
-  }
-}
+import HelloEmoji from "../components/HelloEmoji";
+
+const birthday = new Date("March 22, 2020 03:00:00");
 
 class Home extends Component {
   state = { isShowing: false };
@@ -26,8 +18,9 @@ class Home extends Component {
 
   render() {
     const { isShowing } = this.state;
+    const daysOld = timediff(birthday, Date()).days + 1;
     return (
-      <div className="container">
+      <div className="ibm-mono yellow">
         <Head>
           <title>Buddy the Fish</title>
           <link rel="icon" href="/favicon.ico" />
@@ -37,7 +30,12 @@ class Home extends Component {
           />
         </Head>
 
-        <div className="body ibm-mono yellow pv3 ph3">
+        <div className="flex items-center justify-end mw7 center pv3">
+          <Link href="/letters">
+            <a className="yellow ibm-mono">Letters</a>
+          </Link>
+        </div>
+        <div className="pv4 ph3">
           <div className="mw8 center tc">
             <h1 className="title">This is buddy... the fish</h1>
 
@@ -51,7 +49,7 @@ class Home extends Component {
               ></iframe>
             </div>
 
-            <p className="lh-copy pt4">Today Buddy is 3 days old!</p>
+            <p className="lh-copy pt4">Today Buddy is {daysOld} days old!</p>
             <p className="lh-copy pb3">
               Buddy is here to give us emotional support during today's times.
               <br />
