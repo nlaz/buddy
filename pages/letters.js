@@ -41,8 +41,6 @@ const Letters = ({ letters }) => (
 Letters.getInitialProps = async function() {
   const json = await csv().fromFile("./data/letters.csv");
 
-  console.log(json);
-
   return { letters: json };
 };
 
