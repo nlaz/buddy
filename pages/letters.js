@@ -3,10 +3,11 @@ import Head from "next/head";
 import Link from "next/link";
 import csv from "csvtojson";
 import letters from "../data/letters.json";
+import moment from "moment";
 
 const LetterItem = ({ letter }) => (
   <div className="mb4 lh-copy">
-    {letter["Name"]} {letter["Last Name"][0]}. - {letter["Message"]} -{" "}
+    {letter["Name"]} {letter["Last Initial"]} - {letter["Message"]} -{" "}
     {letter["Created At"]}
   </div>
 );
@@ -28,9 +29,15 @@ const Letters = ({ letters }) => (
       </Link>
     </div>
     <div className="pv5 ph3 mw7 center">
-      {letters.map((i, key) => (
-        <LetterItem letter={i} key={key} />
-      ))}
+      {letters
+        .sort(
+          (a, b) =>
+            moment(new Date(b["Created At"])) -
+            moment(new Date(a["Created At"]))
+        )
+        .map((i, key) => (
+          <LetterItem letter={i} key={key} />
+        ))}
       <hr className="mb4" />
       <a href="https://airtable.com/shr4Fp80xMFToqYcA" className="yellow">
         Write your own
