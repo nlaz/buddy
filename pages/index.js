@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import timediff from "timediff";
+import moment from "moment";
 
 import HelloEmoji from "../components/HelloEmoji";
+import { logEvent } from "../helpers/analytics";
 
-const birthday = new Date("March 22, 2020 03:00:00");
+const birthday = moment("March 22, 2020 03:00:00");
 
 class Home extends Component {
   state = { isShowing: false };
 
   onClick = () => {
+    logEvent("User has clicked action", "Hello Buddy");
     this.setState({ isShowing: true });
   };
 
@@ -18,7 +20,7 @@ class Home extends Component {
 
   render() {
     const { isShowing } = this.state;
-    const daysOld = timediff(birthday, Date()).days + 1;
+    const daysOld = moment().diff(birthday, "days") + 1;
     return (
       <div className="ibm-mono yellow">
         <Head>
