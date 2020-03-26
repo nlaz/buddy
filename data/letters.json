@@ -1,20 +1,44 @@
 [
   {
     "Name": "Niko",
-    "Last Name": "Lazaris",
+    "Last Initial": "L.",
     "Message": "Buddy, you bring a lot of joy to my life. Keep on swimming and living.",
     "Created At": "3/24/2020"
   },
   {
     "Name": "Daddy",
-    "Last Name": "V",
+    "Last Initial": "V.",
     "Message": "The best fish since Nemo!",
     "Created At": "3/24/2020"
   },
   {
     "Name": "hella",
-    "Last Name": "chen",
+    "Last Initial": "c.",
     "Message": "don't die buddy remind niko fish are friends not food",
     "Created At": "3/24/2020"
+  },
+  {
+    "Name": "hella",
+    "Last Initial": "c.",
+    "Message": "it's almost 2am, lofi is playing, we're reading books, and we're vibin lil dude life is good",
+    "Created At": "3/25/2020"
+  },
+  {
+    "Name": "Kat",
+    "Last Initial": "O.",
+    "Message": "if you or a loved one are a goldfish killed by nick or niko you may be entitled to financial compensation in an ongoing class action lawsuit",
+    "Created At": "3/25/2020"
+  },
+  {
+    "Name": "Yatu",
+    "Last Initial": "S.",
+    "Message": "Buddy you are loved! We’re all going to get through this. Thank you for being here!",
+    "Created At": "3/25/2020"
+  },
+  {
+    "Name": "Emily",
+    "Last Initial": "D.",
+    "Message": "I wish you the most happy and healthy life you can have, buddy. Take care!",
+    "Created At": "3/25/2020"
   }
 ]
