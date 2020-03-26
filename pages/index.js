@@ -6,7 +6,7 @@ import moment from "moment";
 import HelloEmoji from "../components/HelloEmoji";
 import { logEvent } from "../helpers/analytics";
 
-const birthday = moment("March 22, 2020 03:00:00");
+const birthday = moment("2020-03-22T03:00:00+00:00");
 
 class Home extends Component {
   state = { isShowing: false };

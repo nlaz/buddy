@@ -2,9 +2,7 @@ import ReactGA from "react-ga";
 
 export const gaCode = "UA-161907887-1";
 
-export const initGA = () => {
-  ReactGA.initialize(gaCode);
-};
+ReactGA.initialize(gaCode);
 
 export const logPageView = () => {
   ReactGA.set({ page: window.location.pathname });
