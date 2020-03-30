@@ -3,12 +3,13 @@ import Head from "next/head";
 import Link from "next/link";
 import csv from "csvtojson";
 import letters from "../data/letters.json";
+import reactions from "../data/reactions.json";
 import moment from "moment";
 
 const LetterItem = ({ letter }) => (
   <div className="mb4 lh-copy">
-    {letter["Name"]} {letter["Last Initial"]} - {letter["Message"]} -{" "}
-    {letter["Created At"]}
+    {letter["name"]} {letter["initial"]} - {letter["message"]} -{" "}
+    {letter["created_at"]}
   </div>
 );
 
@@ -32,8 +33,8 @@ const Letters = ({ letters }) => (
       {letters
         .sort(
           (a, b) =>
-            moment(new Date(b["Created At"])) -
-            moment(new Date(a["Created At"]))
+            moment(new Date(b["created_at"])) -
+            moment(new Date(a["created_at"]))
         )
         .map((i, key) => (
           <LetterItem letter={i} key={key} />
